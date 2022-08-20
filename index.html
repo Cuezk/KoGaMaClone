@@ -1,0 +1,456 @@
+<html>
+
+</html>
+
+<body id="root-page-mobile" class="game">
+
+
+
+
+
+ <header id="pageheader"><div class="pageheader-inner"><a href="/games/" title="KoGaMa" class="logo"><div class="logo-image"></div></a><nav class="menu anonymous"><ol><li class="game active"><a href="/games/"><i class="icon-gamepad"></i><span class="text">Play</span></a></li><li class="build "><a href="/build/"><i class="icon-cubes"></i><span class="text">Build</span></a></li><li class="shop "><a href="/marketplace/"><i class="icon-basket"></i><span class="text">Shop</span></a></li><li class="news "><a href="/news/"><i class="icon-news"></i><span class="text">News</span></a></li><li class="news "><a href="/videos/"><i class="icon-youtube-play"></i><span class="text">Videos</span></a></li></ol></nav> <ol id="meta-nav"><li class="login"> <a id="login-button" class="login-button text" href="">LOGIN</a></li><li class="signup"> <a id="signup-button" class="pure-button pure-button-xlarge signup-button">SIGNUP</a></li><li class="menu" id="profile-extended-toggle"><a href=""><i class="icon-menu"></i></a></li> </ol> <div id="profile-extended"><div class="profile-links"><div class="arrow-top-border"></div><div class="arrow-top"></div><ul class="links"><li class="link-group about"><a href="#"><img class="menu-icon" src="/static/img/icons/icn_about.svg"> <span class="text">About KoGaMa</span></a><ul><li><a href="/help/parents/"><img class="menu-icon" src="/static/img/icons/icn_parents.svg"> Parents' Guide</a></li><li><a href="/help/privacy-policy/"><img class="menu-icon" src="/static/img/icons/icn_privacy.svg"> Privacy Policy</a></li><li id="consent_withdraw_menu" style="display: none;"><a href="#" onclick="show_remove_consent()"><img class="menu-icon" src="/static/img/icons/icn_consent.svg"> Withdraw Consent</a></li><li id="consent_give_menu" style="display: block;"><a href="#" onclick="show_consent_popup()"><img class="menu-icon" src="/static/img/icons/icn_consent.svg"> Give Consent</a></li><li><a href="/help/terms-and-conditions/"><img class="menu-icon" src="/static/img/icons/icn_terms.svg"> Terms of Use</a></li></ul></li><li><a href="/help/"><img class="menu-icon" src="/static/img/icons/icn_contact.svg"> <span class="text">Contact us</span></a></li><li><a href="https://www.support.kogama.com/hc/en-us"><img class="menu-icon" src="/static/img/icons/icn_help.svg"> <span class="text">Help</span></a></li><li class="locale"><a href="#" class="locale-container"><img class="menu-icon" src="/static/img/icons/icn_language.svg"> <div id="region-selector" style="display: inline;"><a href="#" data-code="en_US">English (US)</a><div id="region-selector-regions"></div></div></a></li></ul></div> </div> </div><div id="react-become-member"></div> </header>
+
+
+<div class="ad_consent_popup" id="ad_consent_popup">
+    <div class="box">
+        <div class="header">
+            <a class="x close" onclick="dismiss_consent()" href="#">×</a>
+            <h2>Welcome</h2>
+        </div>
+        <div class="content">
+            <p>Thanks for playing a game from KoGaMa!</p>
+            <p>Our games use cookies. To enable us to provided you with age-appropriate content, we ask you to please select your age.</p>
+            <p>See also our <a href="/help/cookies/" style="color: #333">Cookie Policy</a></p>
+            <br>
+            <p>Please provide your age to continue.</p>
+
+            <select class="input" id="consent_age">
+                <option value="36">35+</option>
+                
+                <option value="34">34</option>
+                
+                <option value="33">33</option>
+                
+                <option value="32">32</option>
+                
+                <option value="31">31</option>
+                
+                <option value="30">30</option>
+                
+                <option value="29">29</option>
+                
+                <option value="28">28</option>
+                
+                <option value="27">27</option>
+                
+                <option value="26">26</option>
+                
+                <option value="25">25</option>
+                
+                <option value="24">24</option>
+                
+                <option value="23">23</option>
+                
+                <option value="22">22</option>
+                
+                <option value="21">21</option>
+                
+                <option value="20">20</option>
+                
+                <option value="19">19</option>
+                
+                <option value="18">18</option>
+                
+                <option value="17">17</option>
+                
+                <option value="16">16</option>
+                
+                <option value="15">15</option>
+                
+                <option value="14">14</option>
+                
+                <option value="13">13</option>
+                
+                <option value="12">12</option>
+                
+                <option value="11">11</option>
+                
+                <option value="10">10</option>
+                
+                <option value="9">9</option>
+                
+                <option value="8">8</option>
+                
+                <option value="7">7</option>
+                
+                <option value="6">6</option>
+                
+            </select>
+            <br>
+            <br>
+            <button type="button" onclick="accept_consent()" class="btn btn-success" style="width:100%">Got it!</button>
+        </div>
+    </div>
+</div>
+
+<div class="ad_consent_popup" id="ad_consent_withdraw_popup">
+    <div class="box">
+        <div class="header">
+            <a class="x close" onclick="dismiss_remove_consent()" href="#">×</a>
+            <h2>Withdraw consent</h2>
+        </div>
+        <div class="content">
+            <p>You are about to withdraw your consent to our processing of any personal information on your account. Please note that this may cause parts of our site to not behave as intended.</p>
+            <p>Please confirm if you wish to proceed.</p>
+            <br>
+            <button type="button" onclick="remove_consent()" class="btn btn-success" style="width:100%">Remove Consent</button>
+        </div>
+    </div>
+</div>
+
+<div id="content" class="">
+    <div id="content-container">
+             <header id="pagesubheader"><div class="submenu-container"><ul class="submenu"><li class="playing  active"><a href="/games/playing/"><i class="icon-gamepad "></i> Popular</a> </li><li class="featured"><a href="/games/featured/"><i class="icon-rocket "></i> Featured</a> </li><li class="new"><a href="/games/new/"><i class="icon-fire "></i> Hot New</a> </li><li class="calendar-weekly"><a href="/games/calendar-weekly/"><i class="icon-crown "></i> Weekly Toplist</a> </li><li class="likes"><a href="/games/likes/"><i class="icon-heart "></i> Likes</a> </li><li class="search"><a href="/search/"><i class="icon-search "></i> Search</a> </li></ul></div><div tabindex="0" class="overflow-menu"><div class="link"><i class="icon-ellipsis-vert"></i></div><ul class="overflow-menu-content"><li class="playing  active"><a href="/games/playing/"><i class="icon-gamepad "></i> Popular</a> </li><li class="featured"><a href="/games/featured/"><i class="icon-rocket "></i> Featured</a> </li><li class="new"><a href="/games/new/"><i class="icon-fire "></i> Hot New</a> </li><li class="calendar-weekly"><a href="/games/calendar-weekly/"><i class="icon-crown "></i> Weekly Toplist</a> </li><li class="likes"><a href="/games/likes/"><i class="icon-heart "></i> Likes</a> </li><li class="search"><a href="/search/"><i class="icon-search "></i> Search</a> </li></ul></div> </header> 
+        <div id="spacer-cell"></div>
+        <div id="main-content">
+            <div id="notification"><ul class="notifications"></ul></div>
+            <div id="news-popup-container"></div>
+            
+            <div id="mobile-page">
+                <div id="mobile-page-content">
+              <div id="kogama-skyscraper-left-container" class="skyscraper_container  user-not-logged-in "> <div id="" class="ads-display ads-skyscraper" style="display: none;"> <div class="ads-label ads-label-center" style="display: none !important;">Advertisement </div> <!-- kogama_160x600 --> <div id="kogama-skyscraper-left" data-google-query-id="CJjDrPPv1fkCFQuxAQodkFcEoA"> 
+			<script type="text/javascript">
+				googletag.cmd.push(function(){
+				        googletag.display('kogama-skyscraper-left');
+				});
+			</script>
+		 <div id="google_ads_iframe_46278883/skyscraper_0__container__" style="border: 0pt none; width: 160px; height: 0px;"></div></div> </div> </div>  <article id="game-index" class="content-games content-content"> <!-- kogama_mobile_leaderboard --><div id="kogama_mobile_leaderboard_1_container" class="ads-display ads-leaderboard " style="display: none;"><div class="ads-label ads-label-center" style="display: none !important;">Advertisement</div><div id="kogama_mobile_leaderboard_1" data-google-query-id="CJfDrPPv1fkCFQuxAQodkFcEoA">
+			
+		<div id="google_ads_iframe_46278883/leaderboard_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_46278883/leaderboard_0" name="google_ads_iframe_46278883/leaderboard_0" title="3rd party ad content" width="728" height="90" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" role="region" aria-label="Advertisement" tabindex="0" data-load-complete="true" data-google-container-id="1" style="border: 0px; vertical-align: bottom;"></iframe></div></div></div> <section class="carousel"><header><h3><i class="icon-star text-gold"></i><a href="/games/members/">Elite Games</a></h3><div id="game-new-payed-help" class="help-popup-manager"><div><div class="help-label"><span class="text">What's this?</span></div></div></div></header><div class="carousel-container"><ul class="games-list carousel-list carousel-games-list" id="game-new-payed"><li class="game-item"><a href="/games/play/214168/"><div class="game-image" style="background-image: url(//friends.kogstatic.com/gen_cache/d0/4b/d04b98e8-ac85-4bf0-aa63-c1eedf291062_350x194.jpg)"></div>  <div class="game-name-stats"><div class="game-name">Features Showcase (Parkour x PvP)</div><ul class="game-stats"><li class="game-likes"><span class="data tool-tip" data-placement="top" data-original-title="Likes"><i class="icon-heart"></i> 444</span></li><li class="game-played"><span class="data tool-tip" data-placement="top" data-original-title="Play count"><i class="icon-gamepad"></i> 22 686</span></li></ul> </div> <ul class="game-icons"><li class="display-item-member"><div class="display-member data tool-tip" data-placement="bottom" data-original-title="Elite Game"><i class="icon-star text-gold"></i></div></li> </ul></a></li><li class="game-item"><a href="/games/play/230196/"><div class="game-image" style="background-image: url(//friends.kogstatic.com/gen_cache/56/00/560098edf9d946f7a365e1ff7ebd62d9_350x194.jpg)"></div>  <div class="game-name-stats"><div class="game-name">Mobile testing (</div><ul class="game-stats"><li class="game-likes"><span class="data tool-tip" data-placement="top" data-original-title="Likes"><i class="icon-heart"></i> 107</span></li><li class="game-played"><span class="data tool-tip" data-placement="top" data-original-title="Play count"><i class="icon-gamepad"></i> 5 393</span></li></ul> </div> <ul class="game-icons"><li class="display-item-member"><div class="display-member data tool-tip" data-placement="bottom" data-original-title="Elite Game"><i class="icon-star text-gold"></i></div></li> </ul></a></li><li class="game-item"><a href="/games/play/144413/"><div class="game-image" style="background-image: url(//friends.kogstatic.com/gen_cache/5a/fc/5afca740-9c5a-4df9-9169-d69e8e817989_350x194.jpg)"></div>  <div class="game-name-stats"><div class="game-name">testy placy</div><ul class="game-stats"><li class="game-likes"><span class="data tool-tip" data-placement="top" data-original-title="Likes"><i class="icon-heart"></i> 26</span></li><li class="game-played"><span class="data tool-tip" data-placement="top" data-original-title="Play count"><i class="icon-gamepad"></i> 1 540</span></li></ul> </div> <ul class="game-icons"><li class="display-item-member"><div class="display-member data tool-tip" data-placement="bottom" data-original-title="Elite Game"><i class="icon-star text-gold"></i></div></li> </ul></a></li><li class="game-item"><a href="/games/play/242177/"><div class="game-image" style="background-image: url(//friends.kogstatic.com/gen_cache/d9/be/d9be87be-1313-47ee-b86a-c29d79d8f419_350x194.jpg)"></div>  <div class="game-name-stats"><div class="game-name">Test game 2.0</div><ul class="game-stats"><li class="game-likes"><span class="data tool-tip" data-placement="top" data-original-title="Likes"><i class="icon-heart"></i> 25</span></li><li class="game-played"><span class="data tool-tip" data-placement="top" data-original-title="Play count"><i class="icon-gamepad"></i> 1 051</span></li></ul> </div> <ul class="game-icons"><li class="display-item-member"><div class="display-member data tool-tip" data-placement="bottom" data-original-title="Elite Game"><i class="icon-star text-gold"></i></div></li> </ul></a></li><li class="game-item"><a href="/games/play/231494/"><div class="game-image" style="background-image: url(//friends.kogstatic.com/gen_cache/7a/7f/7a7f2f09-63fa-467b-8202-19257610e4ee_350x194.jpg)"></div>  <div class="game-name-stats"><div class="game-name">no</div><ul class="game-stats"><li class="game-likes"><span class="data tool-tip" data-placement="top" data-original-title="Likes"><i class="icon-heart"></i> 25</span></li><li class="game-played"><span class="data tool-tip" data-placement="top" data-original-title="Play count"><i class="icon-gamepad"></i> 972</span></li></ul> </div> <ul class="game-icons"><li class="display-item-member"><div class="display-member data tool-tip" data-placement="bottom" data-original-title="Elite Game"><i class="icon-star text-gold"></i></div></li> </ul></a></li><li class="game-item"><a href="/games/play/205167/"><div class="game-image" style="background-image: url(//friends.kogstatic.com/gen_cache/ad/f9/adf95e3c-fc68-42ed-9fd9-7840aec23af7_350x194.jpg)"></div>  <div class="game-name-stats"><div class="game-name">Project Los Santos (ALPHA)</div><ul class="game-stats"><li class="game-likes"><span class="data tool-tip" data-placement="top" data-original-title="Likes"><i class="icon-heart"></i> 118</span></li><li class="game-played"><span class="data tool-tip" data-placement="top" data-original-title="Play count"><i class="icon-gamepad"></i> 3 888</span></li></ul> </div> <ul class="game-icons"><li class="display-item-member"><div class="display-member data tool-tip" data-placement="bottom" data-original-title="Elite Game"><i class="icon-star text-gold"></i></div></li> </ul></a></li><li class="game-item"><a href="/games/play/227860/"><div class="game-image" style="background-image: url(//friends.kogstatic.com/gen_cache/0b/19/0b191cfa-cb36-4199-8552-6c68fcaa7190_350x194.jpg)"></div>  <div class="game-name-stats"><div class="game-name">KoGaMa Test of bugs</div><ul class="game-stats"><li class="game-likes"><span class="data tool-tip" data-placement="top" data-original-title="Likes"><i class="icon-heart"></i> 32</span></li><li class="game-played"><span class="data tool-tip" data-placement="top" data-original-title="Play count"><i class="icon-gamepad"></i> 943</span></li></ul> </div> <ul class="game-icons"><li class="display-item-member"><div class="display-member data tool-tip" data-placement="bottom" data-original-title="Elite Game"><i class="icon-star text-gold"></i></div></li> </ul></a></li><li class="game-item"><a href="/games/play/229525/"><div class="game-image" style="background-image: url(//friends.kogstatic.com/gen_cache/45/57/45573bc5-98ca-4641-a31c-b7c1e3ae992e_350x194.jpg)"></div>  <div class="game-name-stats"><div class="game-name">Bip, Bop, Logic! (Tests)</div><ul class="game-stats"><li class="game-likes"><span class="data tool-tip" data-placement="top" data-original-title="Likes"><i class="icon-heart"></i> 24</span></li><li class="game-played"><span class="data tool-tip" data-placement="top" data-original-title="Play count"><i class="icon-gamepad"></i> 866</span></li></ul> </div> <ul class="game-icons"><li class="display-item-member"><div class="display-member data tool-tip" data-placement="bottom" data-original-title="Elite Game"><i class="icon-star text-gold"></i></div></li> </ul></a></li><li class="game-item"><a href="/games/play/167497/"><div class="game-image" style="background-image: url(//friends.kogstatic.com/gen_cache/87/8c/878c0e04-718e-450c-99b9-04bea927e497_350x194.jpg)"></div>  <div class="game-name-stats"><div class="game-name">Mapa para testes</div><ul class="game-stats"><li class="game-likes"><span class="data tool-tip" data-placement="top" data-original-title="Likes"><i class="icon-heart"></i> 3</span></li><li class="game-played"><span class="data tool-tip" data-placement="top" data-original-title="Play count"><i class="icon-gamepad"></i> 217</span></li></ul> </div> <ul class="game-icons"><li class="display-item-member"><div class="display-member data tool-tip" data-placement="bottom" data-original-title="Elite Game"><i class="icon-star text-gold"></i></div></li> </ul></a></li><li class="game-item"><a href="/games/play/117856/"><div class="game-image" style="background-image: url(//friends.kogstatic.com/gen_cache/77/7a/777ab3d6-3692-4bec-bba1-a18a3ffef064_350x194.jpg)"></div>  <div class="game-name-stats"><div class="game-name">Free Xp</div><ul class="game-stats"><li class="game-likes"><span class="data tool-tip" data-placement="top" data-original-title="Likes"><i class="icon-heart"></i> 684</span></li><li class="game-played"><span class="data tool-tip" data-placement="top" data-original-title="Play count"><i class="icon-gamepad"></i> 18 781</span></li></ul> </div> <ul class="game-icons"><li class="display-item-member"><div class="display-member data tool-tip" data-placement="bottom" data-original-title="Elite Game"><i class="icon-star text-gold"></i></div></li> </ul></a></li><li class="game-item"><a href="/games/play/218987/"><div class="game-image" style="background-image: url(//friends.kogstatic.com/gen_cache/56/00/560098edf9d946f7a365e1ff7ebd62d9_350x194.jpg)"></div>  <div class="game-name-stats"><div class="game-name">Ultimate test of the universe</div><ul class="game-stats"><li class="game-likes"><span class="data tool-tip" data-placement="top" data-original-title="Likes"><i class="icon-heart"></i> 13</span></li><li class="game-played"><span class="data tool-tip" data-placement="top" data-original-title="Play count"><i class="icon-gamepad"></i> 697</span></li></ul> </div> <ul class="game-icons"><li class="display-item-member"><div class="display-member data tool-tip" data-placement="bottom" data-original-title="Elite Game"><i class="icon-star text-gold"></i></div></li> </ul></a></li><li class="game-item"><a href="/games/play/221756/"><div class="game-image" style="background-image: url(//friends.kogstatic.com/gen_cache/56/00/560098edf9d946f7a365e1ff7ebd62d9_350x194.jpg)"></div>  <div class="game-name-stats"><div class="game-name">bugs</div><ul class="game-stats"><li class="game-likes"><span class="data tool-tip" data-placement="top" data-original-title="Likes"><i class="icon-heart"></i> 3</span></li><li class="game-played"><span class="data tool-tip" data-placement="top" data-original-title="Play count"><i class="icon-gamepad"></i> 203</span></li></ul> </div> <ul class="game-icons"><li class="display-item-member"><div class="display-member data tool-tip" data-placement="bottom" data-original-title="Elite Game"><i class="icon-star text-gold"></i></div></li> </ul></a></li><li class="game-item"><a href="/games/play/222832/"><div class="game-image" style="background-image: url(//friends.kogstatic.com/gen_cache/42/23/42238de716a446938dc7e9f732db71a2_350x194.jpg)"></div>  <div class="game-name-stats"><div class="game-name">Test no text city bug</div><ul class="game-stats"><li class="game-likes"><span class="data tool-tip" data-placement="top" data-original-title="Likes"><i class="icon-heart"></i> 22</span></li><li class="game-played"><span class="data tool-tip" data-placement="top" data-original-title="Play count"><i class="icon-gamepad"></i> 1 133</span></li></ul> </div> <ul class="game-icons"><li class="display-item-member"><div class="display-member data tool-tip" data-placement="bottom" data-original-title="Elite Game"><i class="icon-star text-gold"></i></div></li> </ul></a></li><li class="game-item"><a href="/games/play/190811/"><div class="game-image" style="background-image: url(//friends.kogstatic.com/gen_cache/7f/34/7f34608f-160a-4738-8541-c03f0982f7c5_350x194.jpg)"></div>  <div class="game-name-stats"><div class="game-name"> The Parkour 2018! - 10 Levels</div><ul class="game-stats"><li class="game-likes"><span class="data tool-tip" data-placement="top" data-original-title="Likes"><i class="icon-heart"></i> 25</span></li><li class="game-played"><span class="data tool-tip" data-placement="top" data-original-title="Play count"><i class="icon-gamepad"></i> 1 045</span></li></ul> </div> <ul class="game-icons"><li class="display-item-member"><div class="display-member data tool-tip" data-placement="bottom" data-original-title="Elite Game"><i class="icon-star text-gold"></i></div></li> </ul></a></li><li class="game-item"><a href="/games/play/205996/"><div class="game-image" style="background-image: url(//friends.kogstatic.com/gen_cache/a3/58/a358b0d1-424f-460a-a0dc-67d56d5fa5f7_350x194.jpg)"></div>  <div class="game-name-stats"><div class="game-name">Speed Run X (More coming soon)</div><ul class="game-stats"><li class="game-likes"><span class="data tool-tip" data-placement="top" data-original-title="Likes"><i class="icon-heart"></i> 83</span></li><li class="game-played"><span class="data tool-tip" data-placement="top" data-original-title="Play count"><i class="icon-gamepad"></i> 2 824</span></li></ul> </div> <ul class="game-icons"><li class="display-item-member"><div class="display-member data tool-tip" data-placement="bottom" data-original-title="Elite Game"><i class="icon-star text-gold"></i></div></li> </ul></a></li><li class="game-item"><a href="/games/play/146802/"><div class="game-image" style="background-image: url(//friends.kogstatic.com/gen_cache/4a/23/4a23977e-d971-4635-b8b5-9b68f98a1b60_350x194.jpg)"></div>  <div class="game-name-stats"><div class="game-name">test woaw 2d game</div><ul class="game-stats"><li class="game-likes"><span class="data tool-tip" data-placement="top" data-original-title="Likes"><i class="icon-heart"></i> 53</span></li><li class="game-played"><span class="data tool-tip" data-placement="top" data-original-title="Play count"><i class="icon-gamepad"></i> 1 507</span></li></ul> </div> <ul class="game-icons"><li class="display-item-member"><div class="display-member data tool-tip" data-placement="bottom" data-original-title="Elite Game"><i class="icon-star text-gold"></i></div></li> </ul></a></li><li class="game-item"><a href="/games/play/205095/"><div class="game-image" style="background-image: url(//friends.kogstatic.com/gen_cache/c9/b1/c9b182d2-5313-48ff-99bc-82c74b0eeb6a_350x194.jpg)"></div>  <div class="game-name-stats"><div class="game-name">Creative Studio (ALPHA)</div><ul class="game-stats"><li class="game-likes"><span class="data tool-tip" data-placement="top" data-original-title="Likes"><i class="icon-heart"></i> 7</span></li><li class="game-played"><span class="data tool-tip" data-placement="top" data-original-title="Play count"><i class="icon-gamepad"></i> 298</span></li></ul> </div> <ul class="game-icons"><li class="display-item-member"><div class="display-member data tool-tip" data-placement="bottom" data-original-title="Elite Game"><i class="icon-star text-gold"></i></div></li> </ul></a></li><li class="game-item"><a href="/games/play/204533/"><div class="game-image" style="background-image: url(//friends.kogstatic.com/gen_cache/3c/ba/3cbadd8f-0433-4833-aa1c-696b1e35b915_350x194.jpg)"></div>  <div class="game-name-stats"><div class="game-name">Test2</div><ul class="game-stats"><li class="game-likes"><span class="data tool-tip" data-placement="top" data-original-title="Likes"><i class="icon-heart"></i> 8</span></li><li class="game-played"><span class="data tool-tip" data-placement="top" data-original-title="Play count"><i class="icon-gamepad"></i> 467</span></li></ul> </div> <ul class="game-icons"><li class="display-item-member"><div class="display-member data tool-tip" data-placement="bottom" data-original-title="Elite Game"><i class="icon-star text-gold"></i></div></li> </ul></a></li><li class="game-item"><a href="/games/play/138890/"><div class="game-image" style="background-image: url(//friends.kogstatic.com/gen_cache/d8/46/d846a678-2efa-43af-bea8-11e639422112_350x194.jpg)"></div>  <div class="game-name-stats"><div class="game-name">Test KoGaMa Game</div><ul class="game-stats"><li class="game-likes"><span class="data tool-tip" data-placement="top" data-original-title="Likes"><i class="icon-heart"></i> 118</span></li><li class="game-played"><span class="data tool-tip" data-placement="top" data-original-title="Play count"><i class="icon-gamepad"></i> 3 559</span></li></ul> </div> <ul class="game-icons"><li class="display-item-member"><div class="display-member data tool-tip" data-placement="bottom" data-original-title="Elite Game"><i class="icon-star text-gold"></i></div></li> </ul></a></li><li class="game-item"><a href="/games/play/175795/"><div class="game-image" style="background-image: url(//friends.kogstatic.com/gen_cache/7c/2d/7c2d2b4393584e58b1e4d6c54607b00d_350x194.jpg)"></div>  <div class="game-name-stats"><div class="game-name">test2.0</div><ul class="game-stats"><li class="game-likes"><span class="data tool-tip" data-placement="top" data-original-title="Likes"><i class="icon-heart"></i> 3</span></li><li class="game-played"><span class="data tool-tip" data-placement="top" data-original-title="Play count"><i class="icon-gamepad"></i> 292</span></li></ul> </div> <ul class="game-icons"><li class="display-item-member"><div class="display-member data tool-tip" data-placement="bottom" data-original-title="Elite Game"><i class="icon-star text-gold"></i></div></li> </ul></a></li><li class="game-item"><a href="/games/play/139251/"><div class="game-image" style="background-image: url(//friends.kogstatic.com/gen_cache/74/34/74348aa7ddc2435e8dbe09f4cb1a0163_350x194.jpg)"></div>  <div class="game-name-stats"><div class="game-name">Cube Gun Kelim</div><ul class="game-stats"><li class="game-likes"><span class="data tool-tip" data-placement="top" data-original-title="Likes"><i class="icon-heart"></i> 118</span></li><li class="game-played"><span class="data tool-tip" data-placement="top" data-original-title="Play count"><i class="icon-gamepad"></i> 3 494</span></li></ul> </div> <ul class="game-icons"><li class="display-item-member"><div class="display-member data tool-tip" data-placement="bottom" data-original-title="Elite Game"><i class="icon-star text-gold"></i></div></li> </ul></a></li><li class="game-item"><a href="/games/play/128107/"><div class="game-image" style="background-image: url(//friends.kogstatic.com/gen_cache/70/26/702640c928e748ae91ba3179616d1577_350x194.jpg)"></div>  <div class="game-name-stats"><div class="game-name">2D f457 GaMe MiX!</div><ul class="game-stats"><li class="game-likes"><span class="data tool-tip" data-placement="top" data-original-title="Likes"><i class="icon-heart"></i> 13</span></li><li class="game-played"><span class="data tool-tip" data-placement="top" data-original-title="Play count"><i class="icon-gamepad"></i> 317</span></li></ul> </div> <ul class="game-icons"><li class="display-item-member"><div class="display-member data tool-tip" data-placement="bottom" data-original-title="Elite Game"><i class="icon-star text-gold"></i></div></li> </ul></a></li><li class="game-item"><a href="/games/play/139616/"><div class="game-image" style="background-image: url(//friends.kogstatic.com/gen_cache/f4/b5/f4b5536d599d48d0a67f85ff69dc6eda_350x194.jpg)"></div>  <div class="game-name-stats"><div class="game-name">Game Testing</div><ul class="game-stats"><li class="game-likes"><span class="data tool-tip" data-placement="top" data-original-title="Likes"><i class="icon-heart"></i> 31</span></li><li class="game-played"><span class="data tool-tip" data-placement="top" data-original-title="Play count"><i class="icon-gamepad"></i> 1 625</span></li></ul> </div> <ul class="game-icons"><li class="display-item-member"><div class="display-member data tool-tip" data-placement="bottom" data-original-title="Elite Game"><i class="icon-star text-gold"></i></div></li> </ul></a></li><li class="game-item"><a href="/games/play/143262/"><div class="game-image" style="background-image: url(//friends.kogstatic.com/gen_cache/29/df/29df7843c8474dffa083a4db00b26517_350x194.jpg)"></div>  <div class="game-name-stats"><div class="game-name">Testing, testing, testing</div><ul class="game-stats"><li class="game-likes"><span class="data tool-tip" data-placement="top" data-original-title="Likes"><i class="icon-heart"></i> 18</span></li><li class="game-played"><span class="data tool-tip" data-placement="top" data-original-title="Play count"><i class="icon-gamepad"></i> 1 810</span></li></ul> </div> <ul class="game-icons"><li class="display-item-member"><div class="display-member data tool-tip" data-placement="bottom" data-original-title="Elite Game"><i class="icon-star text-gold"></i></div></li> </ul></a></li></ul><div class="control-left" id="game-new-payed-left" style="visibility: hidden; opacity: 0;"><i class="icon-left-circle"></i></div><div class="control-right" id="game-new-payed-right"><i class="icon-right-circle"></i></div><script>
+                    AppReady(function() {
+                        var targ = document.getElementById("game-new-payed");
+                        (kogama.scroller || App.scroller).right(document.getElementById("game-new-payed-right"), targ);
+                        (kogama.scroller || App.scroller).left(document.getElementById("game-new-payed-left"), targ);
+                    });
+                </script></div></section><script type="text/javascript">
+  let max_timestamp = 100000000000;
+  let temp_max_timestamp = 100000000000;
+
+  function cycle_activity(){
+    let child = document.getElementById("activity").firstChild;
+    document.getElementById("activity").removeChild(child);
+  }
+
+  function get_activity(){
+    fetch("/activity").then((response) => {
+      return response.json();
+    }).then((json) => {
+      // avatars
+      for (activity of json.data){
+        if (activity.created >= max_timestamp){
+          continue;
+        }
+        if (activity.created < temp_max_timestamp){
+          temp_max_timestamp = activity.created;
+        }
+
+        if (activity.type === "avatar"){
+          document.getElementById("activity").innerHTML += `
+            <a href="/marketplace/avatar/a-${activity.avatarid}/">
+              <img src="${activity.imagepath}" />
+              <span class="time">${activity.time}</span>
+              <span class="text">${activity.username} posted a new avatar!</span>
+            </a>
+          `
+        } else if (activity.type === "game") {
+          document.getElementById("activity").innerHTML += `
+            <a href="/games/play/${activity.planetid}/">
+              <img src="${activity.imagepath}" />
+              <span class="time">${activity.time}</span>
+              <span class="text">${activity.username} published a new game!</span>
+            </a>
+          `
+        } else if (activity.type === "item") {
+          document.getElementById("activity").innerHTML += `
+            <a href="/marketplace/model/i-${activity.itemid}/">
+              <img src="${activity.imagepath}" />
+              <span class="time">${activity.time}</span>
+              <span class="text">${activity.username} published a new model!</span>
+            </a>
+          `
+        }
+      }
+
+      max_timestamp = temp_max_timestamp;
+    });
+  }
+
+  get_activity();
+  setInterval(get_activity, 10*1000);
+  setInterval(cycle_activity, 4*1000);
+</script> <style type="text/css">
+    #activity {
+      height: 70px;
+      width: 420px;
+      position: relative;
+      overflow: hidden;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: .5em;
+    }
+
+    #activity > a {
+      width: 100%;
+      transition: left 3s, right 3s;
+      position: absolute;
+      left: +100%;
+    }
+    #activity > a:nth-child(2){
+      transition: left 3s, right 3s;
+      left: 0;
+    }
+    #activity > a:first-child {
+      transition: left 3s, right 3s;
+      left: -100%;
+    }
+
+    #activity img {
+      height: 70px;
+      float: right;
+    }
+    #activity .time {
+      display: block;
+      color: gray;
+      font-size: 10px;
+      text-transform: capitalize;
+    }
+</style> <div id="activity"></div><style type="text/css">
+            .split_tile > .fallback, .split_tile > .primary {
+                display: none;
+            }
+            .split_tile.fallback > .fallback {
+                display: block;
+            }
+            .split_tile.primary > .primary {
+                display: block;
+            }
+            .split_tile.fallback > .loading-animation, .split_tile.primary > .loading-animation {
+                display: none !important;
+            }
+
+            .loading-animation {
+                height: 100%;
+            }
+            .loading-animation .box-container {
+                width: 100%;
+                text-align: center;
+                padding-bottom: 55.3%;
+                background-color: #337;
+            }
+            .loading-animation .box-container .box {
+                position: absolute;
+                top: 45%;
+                left: 35%;
+                display: inline-block;
+                width: 10%;
+                height: 10%;
+                background-color: rgba(0,0,0,.15);
+                border-radius: .1em;
+
+                /* start position */
+                -webkit-transform: translate(0, -1em) rotate(-60deg);
+                -moz-transform: translate(0, -1em) rotate(-60deg);
+                -ms-transform: translate(0, -1em) rotate(-60deg);
+                transform: translate(0, -4em) rotate(-60deg);
+                /* animation */
+                animation: push 3.0s cubic-bezier(.79, 0, .47, .97) infinite;
+            }
+
+            @keyframes push {
+                0% { transform:  translateX(0) rotate(-45deg); background-color: rgba(0,0,0,.17);}
+                5% { transform:  translateX(0) rotate(-50deg); background-color: rgba(0,0,0,.18);}
+                20% { transform: translateX(1em) rotate(47deg); background-color: rgba(0,0,0,.20);}
+                25% { transform: translateX(1em) rotate(45deg); background-color: rgba(0,0,0,.22);}
+                30% { transform: translateX(1em) rotate(40deg); background-color: rgba(0,0,0,.24);}
+                45% { transform: translateX(2em) rotate(137deg); background-color: rgba(0,0,0,.26);}
+                50% { transform: translateX(2em) rotate(135deg); background-color: rgba(0,0,0,.28);}
+                55% { transform: translateX(2em) rotate(130deg); background-color: rgba(0,0,0,.30);}
+                70% { transform: translateX(3em) rotate(217deg); background-color: rgba(0,0,0,.32);}
+                75% { transform: translateX(3em) rotate(220deg); background-color: rgba(0,0,0,.34);}
+                100% { transform: translateX(0) rotate(-225deg); background-color: rgba(0,0,0,.15); }
+            }
+        </style><ul class="games-list"><li class="game-item"><a href="/games/play/110876/"><div class="game-image" style="background-image: url(//friends.kogstatic.com/gen_cache/03/a4/03a4e2ef-99d8-4196-9110-40f982bdb877_350x194.jpg)"></div>  <div class="game-name-stats"><div class="game-name">WO Gameplay Test</div><ul class="game-stats"><li class="game-likes"><span class="data tool-tip" data-placement="top" data-original-title="Likes"><i class="icon-heart"></i> 1 207</span></li><li class="game-played"><span class="data tool-tip" data-placement="top" data-original-title="Play count"><i class="icon-gamepad"></i> 91 372</span></li></ul> </div> <ul class="game-icons"><li class="display-item-pinned"><div class="display-pinned data tool-tip" data-placement="bottom" data-original-title="Fun Game"><i class="icon-smile"></i></div></li> </ul></a></li><li class="game-item"><a href="/games/play/354912/"><div class="game-image" style="background-image: url(//friends.kogstatic.com/gen_cache/99/75/99756663-8c65-42d5-ad62-d7a109d24b61_350x194.jpg)"></div>  <div class="game-stats-online"><div class="game-online"><span class="data tool-tip" data-placement="left" data-original-title="Online"><i class="icon-user"></i> 4</span></div> </div>  <div class="game-name-stats"><div class="game-name">паркур с 4 игроками</div><ul class="game-stats"><li class="game-likes"><span class="data tool-tip" data-placement="top" data-original-title="Likes"><i class="icon-heart"></i> 10</span></li><li class="game-played"><span class="data tool-tip" data-placement="top" data-original-title="Play count"><i class="icon-gamepad"></i> 119</span></li></ul> </div> <ul class="game-icons"> </ul></a></li><li class="game-item"><a href="/games/play/345216/"><div class="game-image" style="background-image: url(//friends.kogstatic.com/gen_cache/83/56/8356b511-12da-4b13-b72a-b90a2bf383eb_350x194.jpg)"></div>  <div class="game-stats-online"><div class="game-online"><span class="data tool-tip" data-placement="left" data-original-title="Online"><i class="icon-user"></i> 2</span></div> </div>  <div class="game-name-stats"><div class="game-name">Parkour </div><ul class="game-stats"><li class="game-likes"><span class="data tool-tip" data-placement="top" data-original-title="Likes"><i class="icon-heart"></i> 46</span></li><li class="game-played"><span class="data tool-tip" data-placement="top" data-original-title="Play count"><i class="icon-gamepad"></i> 1 390</span></li></ul> </div> <ul class="game-icons"> </ul></a></li><li class="game-item"><a href="/games/play/356858/"><div class="game-image" style="background-image: url(//friends.kogstatic.com/gen_cache/31/ab/31ab0904-1eba-4d0c-870b-12dedce7821e_350x194.jpg)"></div>  <div class="game-stats-online"><div class="game-online"><span class="data tool-tip" data-placement="left" data-original-title="Online"><i class="icon-user"></i> 1</span></div> </div>  <div class="game-name-stats"><div class="game-name">Симулятор Выживания Бомжа</div><ul class="game-stats"><li class="game-likes"><span class="data tool-tip" data-placement="top" data-original-title="Likes"><i class="icon-heart"></i> 3</span></li><li class="game-played"><span class="data tool-tip" data-placement="top" data-original-title="Play count"><i class="icon-gamepad"></i> 39</span></li></ul> </div> <ul class="game-icons"> </ul></a></li><li class="game-item split_tile youtube-tile fallback" video-id="dYHz7wEs4jE" video-name="&quot;Treasure Hunt Simulator&quot; FULL Walkthrough | Kogama GOTW Walkthrough #13"><div class="game-image field" style="background-image: url(https://img.youtube.com/vi/dYHz7wEs4jE/mqdefault.jpg)"><div class="game-name-stats__wrapper"><div class="game-name-stats"><div class="game-name">VIDEO: "Treasure Hunt Simulator" FULL Walkthrough | Kogama GOTW Walkthrough #13</div></div></div></div></li></ul> <!-- kogama_mobile_leaderboard --><div id="kogama_mobile_leaderboard_2" class="ads-display ads-leaderboard ads-leaderboard-bottom" style="display: none;" data-google-query-id="CJvDrPPv1fkCFQuxAQodkFcEoA"><div class="ads-label ads-label-center" style="display: none !important;">Advertisement</div>
+			<script type="text/javascript">
+				googletag.cmd.push(function(){
+				        googletag.display('kogama_mobile_leaderboard_2');
+				});
+			</script>
+		<div id="google_ads_iframe_46278883/leaderboard_bottom_0__container__" style="border: 0pt none; width: 728px; height: 0px;"></div></div> </article><canvas style="width: 0; height: 0;" id="canvas"></canvas><script type="text/javascript">
+        window.addEventListener('load', function(){
+            var canvas = document.getElementById('canvas');
+            var gl = canvas.getContext('webgl');
+
+            var debugInfo = gl.getExtension('WEBGL_debug_renderer_info');
+            var vendor = gl.getParameter(debugInfo.UNMASKED_VENDOR_WEBGL);
+            var renderer = gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL);
+
+            console.log(vendor);
+            console.log(renderer);
+
+            if (renderer){
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        score = JSON.parse(this.responseText)['score'];
+                        console.log('score was', score);
+
+                        adtiles = document.getElementsByClassName('split_tile');
+                        for (tile of adtiles){
+                            if (score > parseInt(tile.getAttribute("min_score"))){
+                                tile.classList.add("primary");
+                            } else {
+                                tile.classList.add("fallback");
+                            }
+                        }
+                    }
+                };
+                renderer = encodeURIComponent(renderer)
+                xhttp.open("GET", "/gpu_rater/?gpu_string="+renderer, true);
+                xhttp.send();
+            }
+        });
+    </script> <script src="https://apis.google.com/js/platform.js" gapi_processed="true"></script> <script type="text/javascript">
+		function loadSubscribeYoutubeButton() {
+			const containerId = "react-video-modal";
+			gapi.ytsubscribe.go(containerId);
+		}
+	</script>  <div id="kogama-skyscraper-right-container" class="skyscraper_container  user-not-logged-in " style=""> <div id="" class="ads-display ads-skyscraper" style="display: none;"> <div class="ads-label ads-label-center" style="display: none !important;">Advertisement</div> <!-- kogama_160x600 --> <div id="kogama-skyscraper-right" data-google-query-id="CJnDrPPv1fkCFQuxAQodkFcEoA"> 
+			<script type="text/javascript">
+				googletag.cmd.push(function(){
+				        googletag.display('kogama-skyscraper-right');
+				});
+			</script>
+		 <div id="google_ads_iframe_46278883/skyscraper_1__container__" style="border: 0pt none; width: 160px; height: 0px;"></div></div> </div> </div>   
+                </div>
+            </div>
+            
+        </div>
+        
+        
+        
+    </div>
+    <div id="cookies-popup"></div>
+    <div id="chat-extended-side">
+        
+    </div>
+    <div id="birthday-modal"></div>
+    <div id="react-gold-claim"></div>
+    <div id="react-elite-games-modal"></div>
+    <div id="react-video-modal"></div>
+    <div id="react-ingame-modal"><div></div></div>
+</div>
+
+
+    
+    <footer class=""><section id="footer-header"><div class="container"><div class="brand"><a href="/" title="KoGaMa Logo"><img src="/static/img/logo_bluewhite_7.png"></a></div><div class="vision">Play, create and share multiplayer games</div><div class="links-container"> <div class="social-media"> <ul> <li> <a href="https://discordapp.com/invite/kogama" target="_blank" rel="noopener"> <img src="/static/img/social/discord.svg" class="social-button"> </a> </li> <li> <a href="https://www.facebook.com/Kogamians/" target="_blank" rel="noopener"> <img src="/static/img/social/facebook.svg" class="social-button"> </a> </li> <li> <a href="https://www.instagram.com/kogama_official/?hl=en" target="_blank" rel="noopener"> <img src="/static/img/social/instagram.svg" class="social-button"> </a> </li> <li> <a href="https://www.youtube.com/user/KoGaMagamemaker" target="_blank" rel="noopener"> <img src="/static/img/social/youtube.svg" class="social-button"> </a> </li> <li> <a href="https://twitter.com/KOGAMAGAME?lang=da" target="_blank" rel="noopener"> <img src="/static/img/social/twitter.svg" class="social-button"> </a> </li> <li> <a href="https://www.linkedin.com/company/multiverse-aps/" target="_blank" rel="noopener"> <img src="/static/img/social/linkedin.svg" class="social-button"> </a> </li> <li> <a href="https://multiverseblog.weebly.com/" target="_blank" rel="noopener"> <img src="/static/img/social/rss.svg" class="social-button"> </a> </li> <li> <a href="https://kogama.gamepedia.com/Kogama_Wiki" target="_blank" rel="noopener"> <img src="/static/img/social/game-pedia-icon.png" class="social-button"> </a> </li> </ul> </div></div></div></section><section id="footer-company"><div class="container"><ul class="support-links"><li><a href="/help/" id="footer-support-url">Support</a></li></ul><div class="company"><a href="https://multiverseaps.com" target="_blank" rel="noopener" title="Multiverse ApS">multiverseaps.com</a></div></div></section><section id="footer-about"><div class="container"><h4>About</h4><p>KoGaMa is one of the largest sources of the best user created online games including parkour games, funny games, arcade games, multiplayer games, internet games, shooting games, RPG games, racing games, adventure games and much more. Tons of comments ratings, gamers of all skill levels are sure to find hot new games every day. On KoGaMa you can create and publish your own games.</p></div></section><section id="footer-links"><div class="container"><div class="copyright">© 2011-2022 Multiverse ApS. Kogama is a registered trademark</div><ul class="links"><li><a href="/help/publishing/">KoGaMa Publishing</a></li><li><a href="/help/privacy-policy/">Privacy Policy</a></li><li><a href="/help/terms-and-conditions/">Terms &amp; Conditions</a></li></ul></div></section> </footer>
+
+
+<script type="text/javascript">
+function jsLoadedCallback() {
+    DOMReady(function() {
+        var _ = _ || ({ extend: Object.assign });
+        var options = {"ADSENSE_GAMES_ENABLED": true, "ADSENSE_GAMES_TESTING_ENABLED": false, "ANALYTICS_ENABLED": true, "ANDROID_ENABLED": true, "ANDROID_STORE_LISTING_URL": "https://play.google.com/apps/testing/com.multiverse.friendskogama", "AWAY_TIMEOUT": 300000, "CARRY_SERVICE_ENABLED": true, "CHAT_ENABLED": true, "CHAT_SERVICE_ENABLED": false, "COOKIE_POLICY_VERSION": 2, "EMBED_ENABLED": false, "LANGUAGE_DEFAULT": "en_US", "NOTIFY_SERVICE_ENABLED": true, "PING_SERVICE_ENABLED": false, "PUBLIC_DOMAIN_API": "//api-friends.kgoma.com", "PUBLIC_STATIC_URL_BASE": "//friends-static.kogstatic.com", "PUBLIC_URL": "//friends.kogama.com", "RECAPTCHA_LOGIN_ENABLED": false, "REGION": "NA", "SESSION_LOCATOR_DOMAIN_API": null, "SESSION_LOCATOR_SERVICE_ENABLED": true, "USERNAME_CHANGE_GOLD_PRICE": 750, "WEBSITE_CODENAME": "friends", "XP_LEVEL_ENABLED": true, "PAYMENT_STRIPE_KEY": "pk_live_9JuTnQflh2YehcmzL45dHTQ4", "PAYMENT_PAYMENTWALL_URI": "http://api-friends.kgoma.com/v1/payment/paymentwall/", "PAYMENT_URI": "https://api-friends.kgoma.com/v1/payment/", "GOOGLE_RECAPTCHA_V3_SITE_KEY": "6LfebYsUAAAAACpXcBjLBbP2U109NCagVJ3sFnn1"};
+        options.bootstrap = {"locale": "en_US"};
+          _.extend(options, { ENABLE_POPUP_NEWS: true }); 
+        options.MOBILE_WEBSITE = true;
+        var App = window.App = kogamaApp(options);
+        var page = new App.pages.Games(); App.renderPage(page); 
+
+        ad_consent_check();
+    });
+}
+</script>
+
+
+ <script type="text/javascript">
+    (function() {
+        window.RAVENJSOPTIONS = {
+            DSN: "https://524aed015ed04c77af657146cc032ff3@sentry.io/2655",
+            OPTIONS: {
+                release: "a73fa9c397cb37a87c067f7bb3f6c77fb4010da4",
+                enviroment: "NA"
+            }
+        };
+    })();
+</script>  <script>
+    function isModernBrowser() {
+      return (
+          !!window.Promise && !!Object.assign && !!Array.prototype.find &&
+          !!Array.prototype.findIndex && !!Array.prototype.forEach
+      );
+    }
+    (function() {
+        var importScript = (function (oHead) {
+            function loadError(error) {
+                throw new URIError("The script" + error.target.src + "is not accessible")
+            }
+
+            return function (source, callback) {
+                var script = document.createElement("script");
+                script.type = "text/javascript";
+                script.onerror = loadError;
+
+                if (callback) {
+                    script.onload = callback
+                };
+
+                oHead.appendChild(script);
+                script.src = source;
+            }
+        })(document.head || document.getElementsByTagName("head")[0])
+
+
+        if (isModernBrowser()) {
+            importScript("//friends-static.kogstatic.com/0000/a73fa9c397cb37a87c067f7bb3f6c77fb4010da4/app.js")
+        } else {
+            importScript("//friends-static.kogstatic.com/0000/a73fa9c397cb37a87c067f7bb3f6c77fb4010da4/polyfill.js", function() {
+                importScript("//friends-static.kogstatic.com/0000/a73fa9c397cb37a87c067f7bb3f6c77fb4010da4/app.js")
+            })
+        }
+    })()
+</script>  <script type="text/javascript">
+    // declare ga function
+    (function(w, ref) {
+        w['GoogleAnalyticsObject'] = ref;
+        w[ref] = w[ref] || function() {
+            (w[ref].q = w[ref].q || []).push(arguments)
+        }, w[ref].l = 1 * new Date();
+    })(window, "ga");
+
+    ga('create', 'UA-58988690-1', 'auto', {
+            "sampleRate": 100
+    });
+    ga('set', 'anonymizeIp', true);
+
+    // fetch analytics remote script
+    DOMReady(function() {
+        // adapted from app.helper.js
+        function getCookie(sKey) { if (!sKey) { return null; } return decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*" + encodeURIComponent(sKey).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=\\s*([^;]*).*$)|^.*$"), "$1")) || null; }
+        var ref = getCookie("_kref");
+
+        if (Object.prototype.toString.call(ref) == "[object String]" && ref != "") {
+            ga("set", "dimension1", ref);
+        }
+
+        ga('send', 'pageview');
+
+        (function(d, o, url, a, m) {
+            a = d.createElement(o),
+                m = d.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = url;
+            m.parentNode.insertBefore(a, m)
+        })(document, 'script', '//www.google-analytics.com/analytics.js');
+    });
+</script>  <script src="https://www.google.com/recaptcha/enterprise.js?render=6LfczrUaAAAAAEIy9pDrI85XtJsP390YgC3-PlMb"></script><iframe src="https://47e3c2850d6059c708ba297ea10a8dfa.safeframe.googlesyndication.com/safeframe/1-0-38/html/container.html" style="visibility: hidden; display: none;"></iframe>
+<div><div class="grecaptcha-badge" data-style="bottomright" style="width: 256px; height: 60px; display: block; transition: right 0.3s ease 0s; position: fixed; bottom: 14px; right: -186px; box-shadow: gray 0px 0px 5px; border-radius: 2px; overflow: hidden;"><div class="grecaptcha-logo"><iframe title="reCAPTCHA" src="https://www.google.com/recaptcha/enterprise/anchor?ar=2&amp;k=6LfczrUaAAAAAEIy9pDrI85XtJsP390YgC3-PlMb&amp;co=aHR0cHM6Ly9mcmllbmRzLmtvZ2FtYS5jb206NDQz&amp;hl=en&amp;v=PRMRaAwB3KlylGQR57Dyk-pF&amp;size=invisible&amp;cb=nep2l25k26c9" width="256" height="60" role="presentation" name="a-tuztiy8plpij" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe></div><div class="grecaptcha-error"></div><textarea id="g-recaptcha-response-100000" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe style="display: none;"></iframe></div><iframe name="google_ads_top_frame" id="google_ads_top_frame" style="display: none; position: fixed; left: -999px; top: -999px; width: 0px; height: 0px;"></iframe><iframe src="https://www.google.com/recaptcha/api2/aframe" width="0" height="0" style="display: none;"></iframe></body>
